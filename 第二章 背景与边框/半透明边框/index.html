@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>background-clip</title>
+</head>
+<style>
+	.father{
+		background-color: #99CC66;
+		width: 400px;
+		height: 400px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.clip {
+		margin: auto;
+		width: 200px;
+		height: 200px;
+		border: 10px solid hsla(0,0%,100%,.5);
+		background: #fff;
+		background-clip: padding-box;
+	}
+	.no-clip {
+		margin: auto;
+		width: 200px;
+		height: 200px;
+		border: 10px solid hsla(0,0%,100%,.5);
+		background: #fff;
+	}
+</style>
+<body>
+	<div class="father">
+		<div class="no-clip">			
+		</div>				
+	</div>
+	<br>
+	<div class="father">
+		<div class="clip">			
+		</div>				
+	</div>
+</body>
+</html>
