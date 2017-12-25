@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>复杂条纹背景</title>
+</head>
+<style>
+	.div{
+		width: 400px;
+		height: 200px;
+		margin: 50px;
+	}
+	/*桌布（方格纹）*/
+	.gradient1 {
+		background:  white;
+		background-image: linear-gradient(90deg, rgba(200,0,0,.5) 50%, transparent 0),linear-gradient(rgba(200,0,0,.5) 50%, transparent 0);
+		background-size: 30px 30px;
+	}
+	/*网格*/
+	.gradient2 {
+		background: #58a;
+		background-image: linear-gradient(90deg, white 1px, transparent 0),linear-gradient( white 1px, transparent 0);
+		background-size: 30px 30px;
+	}
+	/*蓝图网格*/
+	.gradient3 {
+		background: #58a;
+		background-image: linear-gradient(90deg, white 2px, transparent 0),linear-gradient(white 2px, transparent 0), linear-gradient(90deg, rgba(255,255,255,.3) 1px, transparent 0),linear-gradient(rgba(255,255,255,.3) 1px, transparent 0);
+		background-size: 75px 75px, 75px 75px, 15px 15px, 15px 15px;
+	}
+	/*圆点阵列*/
+	.gradient4 {
+		background: #655;
+		background-image: radial-gradient(tan 30%, transparent 0);
+		background-size: 30px 30px;
+	}
+	/*两个圆点阵列图形叠加*/
+	.gradient5 {
+		background: #655;
+		background-image: radial-gradient(tan 30%, transparent 0),radial-gradient(tan 30%, transparent 0);
+		background-size: 30px 30px;
+		background-position: 0 0, 15px 15px;
+	}
+	/*sass代码*/
+	/*	@mixin polka($size, $dot, $base, $accent) {
+			background: $base;
+			background-image: radial-gradient($accent 30%, transparent 0),radial-gradient($accent 30%, transparent 0);
+			background-size: $size $size;
+			background-position: 0 0, $size/2 $size/2;
+		}
+	*/
+	/*棋盘*/
+	.gradient6 {
+		background: #eee;
+		background-image: linear-gradient(45deg, #bbb 25%, transparent 0), linear-gradient(45deg, transparent 75%, #bbb 0),linear-gradient(45deg, #bbb 25%, transparent 0), linear-gradient(45deg, transparent 75%, #bbb 0);
+		background-size: 30px 30px;
+		background-position: 0 0, 15px 15px, 15px 15px, 30px 30px;
+		/*角向渐变(未实现，有polyfill)*/
+		/*background: repeating-conic-gradient(#bbb 0, #bbb 25%, #eee 0, #eee 50%);*/
+	}
+</style>
+<body>
+	<div class="div gradient1"></div>
+	<br>
+	<div class="div gradient2"></div>
+	<br>
+	<div class="div gradient3"></div>
+	<br>
+	<div class="div gradient4"></div>
+	<br>
+	<div class="div gradient5"></div>
+	<br>
+	<div class="div gradient6"></div>
+</body>
+</html>

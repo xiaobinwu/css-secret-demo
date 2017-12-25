@@ -1,0 +1,99 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>连续图像边框</title>
+</head>
+<style>
+.soming-meaningful{
+	background: url(../../img/bg.jpg);
+	background-size: cover;
+	padding: 20px;
+}
+.soming-meaningful > div {
+	background: white;
+	padding: 20px;
+}
+.soming-meaningful-css {
+	margin-top: 20px;
+	padding: 20px;
+	border: 20px solid transparent;
+	background: linear-gradient(white, white), url(../../img/bg.jpg);
+	background-size: cover;
+	background-clip: padding-box, border-box;
+	/*不加会出现怪异拼接效果*/
+	background-origin: border-box; 
+
+/*	background: linear-gradient(white, white) padding-box, url(../../img/bg.jpg) border-box 0 / cover;*/
+}
+.border-image {
+	width: 500px;
+	height: 200px;
+	margin: 50px;
+	border: 27px solid #fff;
+	border-image: url(../../img/border.png) 27;
+	-webkit-border-image:url(../../img/border.png) 27; 
+}
+.envelope-background{
+	width: 500px;
+	height: 200px;
+	padding: 16px;
+	margin: 50px;
+	border: 16px solid transparent;
+	background: linear-gradient(white, white), repeating-linear-gradient(-45deg, red 0, red 12.5%, transparent 0, transparent 25%, #58a 0, #58a 37.5%, transparent 0, transparent 50%);
+	background-size: 80px 80px;
+	background-clip: padding-box, border-box;
+	background-origin: border-box;
+}
+.envelope-background-border{
+	width: 500px;
+	height: 200px;
+	padding: 16px;
+	margin: 50px;
+	border: 16px solid transparent;
+	border-image: 16 repeating-linear-gradient(-45deg, red 0, red 16px, transparent 0, transparent 32px, #58a 0, #58a 48px, transparent 0, transparent 64px);
+}
+@keyframes ants {
+	to {
+		background-position: 100%;
+	}
+}
+.marching-ants {
+	width: 500px;
+	height: 200px;
+	padding: 16px;
+	border: 1px solid transparent;
+	background: linear-gradient(white, white) padding-box, repeating-linear-gradient(-45deg, black 0, black 25%, white 0, white 50%) 0 / 9.6px 9.6px;
+	animation: ants 12s linear infinite;
+}
+.top-title {
+	margin-top: 20px;
+	width: 500px;
+	border-top: 3.2px solid transparent;
+	border-image: 100% 0 0 linear-gradient(90deg, #333 64px,  transparent 0);
+	padding-top: 16px;
+}
+</style>
+<body>
+
+	<div class="soming-meaningful">
+		<div>方案一、我有个图片边框</div>
+	</div>
+	<div class="soming-meaningful-css">
+		方案二、我有个图片边框
+	</div>
+	<div class="border-image"></div>
+	<div class="envelope-background">
+		我是信封
+	</div>
+	<div class="envelope-background-border">
+		我是信封
+	</div>	
+	<div class="marching-ants"></div>
+
+	<div class="top-title">
+		顶部边框的裁切效果，用了模拟传统的脚注
+	</div>
+
+</body>
+</html>

@@ -10,16 +10,99 @@
 		height: 400px;
 		margin: 50px;
 	}
+	/*横向条纹*/
 	.gradient1 {
-
+		background: linear-gradient(#fb3, #58a);
 	}
 	.gradient2 {
-
+		background: linear-gradient(#fb3 20%, #58a 80%);
 	}
+	.gradient3 {
+		background: linear-gradient(#fb3 40%, #58a 60%);
+	}
+	.gradient4 {
+		background: linear-gradient(#fb3 50%, #58a 50%);
+	}
+	.gradient5 {
+		background: linear-gradient(#fb3 50%, #58a 50%);
+		background-size: 100% 30px;
+	}
+	.gradient6 {
+		background: linear-gradient(#fb3 30%, #58a 0);
+		background-size: 100% 30px;
+	}
+	.gradient7 {
+		background: linear-gradient(#fb3 33.3%, #58a 0, #58a 66.6%, yellowgreen 0);
+		background-size: 100% 45px;
+	}
+	/*垂直条纹*/
+	.gradient8 {
+		background: linear-gradient(to right, #fb3 50%, #58a 0);
+		background-size: 30px 100%;
+	}
+	/*斜向条纹(细条纹)*/
+	.gradient9 {
+		background: linear-gradient(45deg, #fb3 25%, #58a 0, #58a 50%, #fb3 0, #fb3 75%, #58a 0);
+		background-size: 30px 30px;
+	}
+	/*倾向条纹*/
+	/*勾股定理：2 * 15√2*/
+	.gradient10 {
+		background: linear-gradient(45deg, #fb3 25%, #58a 0, #58a 50%, #fb3 0, #fb3 75%, #58a 0);
+		background-size: 42.426406871px 42.426406871px;
+	}
+	/*更好的倾向条纹*/
+	.gradient11 {
+		background: repeating-linear-gradient(45deg, #fb3, #58a 30px);
+	}
+	/*for .gradient11*/
+	.gradient12 {
+		background: repeating-linear-gradient(45deg, #fb3, #fb3 15px, #58a 0, #58a 30px);
+	}
+	/*for .gradient12 调节角度*/
+	.gradient13 {
+		background: repeating-linear-gradient(60deg, #fb3, #fb3 15px, #58a 0, #58a 30px);
+	}	
+	/*灵活的同系条纹*/
+	.gradient14 {
+		background: repeating-linear-gradient(30deg, #79b, #79b 15px, #58a 0, #58a 30px);
+	}		
+	/*更优同系条纹*/
+	.gradient15 {
+		background:  #58a;
+		background-image: repeating-linear-gradient(30deg, rgba(255,255,255,.1), rgba(255,255,255,.1) 15px, transparent 0, transparent 30px);
+	}		
+
 </style>
 <body>
 	<div class="div gradient1"></div>
 	<br>
 	<div class="div gradient2"></div>
+	<br>
+	<div class="div gradient3"></div>
+	<br>
+	<div class="div gradient4"></div>
+	<br>
+	<div class="div gradient5"></div>
+	<br>
+	<div class="div gradient6"></div>
+	<br>
+	<div class="div gradient7"></div>
+	<br>
+	<div class="div gradient8"></div>
+	<br>
+	<div class="div gradient9"></div>
+	<br>
+	<div class="div gradient10"></div>	
+	<br>
+	<div class="div gradient11"></div>	
+	<br>
+	<div class="div gradient12"></div>	
+	<br>
+	<div class="div gradient13"></div>	
+	<br>
+	<div class="div gradient14"></div>	
+	<br>
+	<div class="div gradient15"></div>	
 </body>
 </html>

@@ -1,0 +1,45 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>伪随机背景</title>
+</head>
+<style>
+	.div{
+		width: 400px;
+		height: 200px;
+		margin: 50px;
+	}
+	.gradient1 {
+		background:  white;
+		background-image: linear-gradient(90deg, #fb3 15%, #655 0, #655 40%, #ab4 0, #ab4 65%, hsl(20, 40%, 90%) 0);
+		background-size: 80px 100%;
+	}
+	.gradient2 {
+		background: hsl(20, 40%, 90%);
+		background-image:
+			linear-gradient(90deg, #fb3 10px, transparent 0),
+			linear-gradient(90deg, #ab4 20px, transparent 0),
+			linear-gradient(90deg, #655 20px, transparent 0);
+		/*各层背景图像以不同间距重复数次后再次统一对齐，这里贴片的尺寸实际上就是所有background-size的最小公倍数，而40、60、80的最小公倍数正是240	*/
+		background-size: 80px 100%, 60px 100%, 40px 100%;
+	}
+	/*最小公倍数最大化,使用质数（蝉原则）*/
+	.gradient3 {
+		background: hsl(20, 40%, 90%);
+		background-image:
+			linear-gradient(90deg, #fb3 11px, transparent 0),
+			linear-gradient(90deg, #ab4 23px, transparent 0),
+			linear-gradient(90deg, #655 41px, transparent 0);
+		background-size: 41px 100%, 61px 100%, 83px 100%;
+	}
+
+</style>
+<body>
+	<div class="div gradient1"></div>
+	<br>
+	<div class="div gradient2"></div>
+	<br>
+	<div class="div gradient3"></div>
+</body>
+</html>
