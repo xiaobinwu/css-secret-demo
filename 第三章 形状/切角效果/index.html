@@ -1,0 +1,57 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>切角效果</title>
+</head>
+<style>	
+	/*线性渐变方案*/
+	.picture1{
+		display: inline-block;
+		width: 400px;
+		height: 200px;
+		margin: 100px;
+		background: #58a;
+		background: linear-gradient(-45deg, transparent 15px, #58a 0);
+	}
+	.picture2 {
+		display: inline-block;
+		width: 400px;
+		height: 200px;
+		margin: 100px;
+		background: #58a;
+		background: linear-gradient(-45deg, transparent 15px, #58a 0) right, linear-gradient(45deg, transparent 15px, #655 0) left;
+		background-size: 50% 100%;
+		background-repeat: no-repeat;
+	}
+	
+	.picture3 {
+		display: inline-block;
+		width: 400px;
+		height: 200px;
+		margin: 100px;
+		background: #58a;
+		background: linear-gradient(-45deg, transparent 15px, #58a 0) bottom right, linear-gradient(45deg, transparent 15px, #58a 0) bottom left, linear-gradient(-135deg, transparent 15px, #58a 0) top right, linear-gradient(135deg, transparent 15px, #58a 0) top left;		
+		background-size: 50% 50%;
+		background-repeat: no-repeat;
+	}
+
+/*	@mixin beveled-corners($bg, $tl: 0, $tr: $tl, $br: $tl, $bl: $tr) {
+		background: $bg;
+		background: linear-gradient(-45deg, transparent $br, $bg 0) bottom right,
+		            linear-gradient(45deg, transparent $bl, $bg 0) bottom left, 
+		            linear-gradient(-135deg, transparent $tr, $bg 0) top right, 
+		            linear-gradient(135deg, transparent $tl, $bg 0) top left;	
+		background-size: 50% 50%;
+		background-repeat: no-repeat;
+	}*/
+
+</style>
+<body>
+	<div class="picture1"></div>
+	<br>
+	<div class="picture2"></div>
+	<br>
+	<div class="picture3"></div>
+</body>
+</html>

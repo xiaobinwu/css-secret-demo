@@ -1,0 +1,44 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>菱形图片</title>
+</head>
+<style>	
+	/*基于变形方案*/
+	.picture1{
+		display: inline-block;
+		width: 400px;
+		margin: 100px;
+		transform: rotate(45deg);
+		overflow: hidden;
+	}
+	.picture1 > img {
+		max-width: 100%;
+		/*勾股定理，100% * √2 ＝ 1.42*/
+		transform: rotate(-45deg) scale(1.42);
+	}
+	/*裁切路径方案(适用于非正方形图案)*/
+	.picture2{
+		margin: 100px;
+		width: 400px;
+		height: auto;
+		clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+		transition: 1s clip-path;
+	}
+	.picture2:hover {
+		clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+	}
+
+
+</style>
+<body>
+	<div class="picture1">
+		 <img src="../../img/2018.jpg">
+	</div>
+	<br>
+
+	<img class="picture2" src="../../img/bg.jpg">
+
+</body>
+</html>

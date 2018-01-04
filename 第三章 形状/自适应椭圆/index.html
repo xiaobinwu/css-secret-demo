@@ -1,0 +1,42 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>自适应椭圆</title>
+</head>
+<style>
+	.div{
+		width: 400px;
+		height: 200px;
+		margin: 50px;
+		background: green;
+	}
+	.circle1 {
+		border-radius: 50%;
+		/*border-radius: 50% / 50%; */
+		/*border-radius: 200px / 100px;*/
+	}
+	/*半椭圆(纵轴对称)*/
+	.circle2 {
+		border-radius: 50% / 100% 100% 0 0;
+	}
+	/*半椭圆（横轴对称）*/
+	.circle3 {
+		border-radius: 100% 0 0 100% / 50%;
+	}
+	/*四分之一的椭圆*/
+	.circle4 {
+		border-radius: 100% 0 0 0;
+	}
+
+</style>
+<body>
+	<div class="div circle1"></div>
+	<br>
+	<div class="div circle2"></div>
+	<br>
+	<div class="div circle3"></div>
+	<br>
+	<div class="div circle4"></div>
+</body>
+</html>

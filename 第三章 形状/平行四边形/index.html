@@ -1,0 +1,57 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>平行四边形</title>
+</head>
+<style>	
+	/*嵌套元素方案*/
+	.button1{
+		display: inline-block;
+		width: 400px;
+		height: 200px;
+		margin: 100px;
+		background: green;
+		color: #fff;
+		transform: skew(-45deg);
+	}
+	.button1 > div {
+		text-align: center;
+		line-height: 200px;
+		font-size: 30px;
+		transform: skew(45deg);
+	}
+	/*伪元素方案*/
+	.button2{
+		display: inline-block;
+		width: 400px;
+		height: 200px;
+		margin: 100px;
+		text-align: center;
+		line-height: 200px;
+		font-size: 30px;
+		color: #fff;
+		position: relative;
+	}
+	.button2::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: -1;
+		background: green;
+		transform: skew(-45deg);
+	}
+</style>
+<body>
+	<a class="button1">
+		<div>click me !!!</div>
+	</a>
+	<br>
+	<a class="button2">
+		click me !!!
+	</a>
+</body>
+</html>
