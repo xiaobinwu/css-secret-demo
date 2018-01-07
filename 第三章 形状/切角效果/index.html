@@ -31,6 +31,7 @@
 		height: 200px;
 		margin: 100px;
 		background: #58a;
+		/*bottom right 为出发点 */
 		background: linear-gradient(-45deg, transparent 15px, #58a 0) bottom right, linear-gradient(45deg, transparent 15px, #58a 0) bottom left, linear-gradient(-135deg, transparent 15px, #58a 0) top right, linear-gradient(135deg, transparent 15px, #58a 0) top left;		
 		background-size: 50% 50%;
 		background-repeat: no-repeat;
@@ -45,7 +46,45 @@
 		background-size: 50% 50%;
 		background-repeat: no-repeat;
 	}*/
-
+	/*弧形切角*/
+	.picture4 {
+		display: inline-block;
+		width: 400px;
+		height: 200px;
+		margin: 100px;
+		background: #58a;
+		background: radial-gradient(circle at top left, transparent 15px, #58a 0) top left,
+					radial-gradient(circle at top right, transparent 15px, #58a 0) top right,
+					radial-gradient(circle at bottom left, transparent 15px, #58a 0) bottom left,
+					radial-gradient(circle at bottom right, transparent 15px, #58a 0) bottom right;
+		background-size: 50% 50%; 
+		background-repeat: no-repeat;
+	}  
+	/*内联svg与border-image方案*/
+	.picture5 {
+		display: inline-block;
+		width: 400px;
+		height: 200px;
+		margin: 100px;
+		/*渐变方案使用渐变轴进行度量，方向与渐变推进方向一致，而这种方案却不是，会比实际小，因此有勾股定理计算得到15px * √2 */
+		border: 20px solid #58a;
+		border-image: 1 url('data:image/svg+xml,\
+				<svg xmlns="http://www.w3.org/2000/svg" width="3" height="3" fill="%2358a">\
+					<polygon points="0,1 1,0 2,0 3,1 3,2 2,3 1,3 0,2"/>\
+				</svg>');
+		background: #58a;
+		background-clip: padding-box;
+	}
+	/*裁切路径方案*/
+	.picture6 {
+		display: inline-block;
+		width: 400px;
+		height: 200px;
+		margin: 100px;
+		background: #58a;
+		clip-path: polygon(20px 0, calc(100% - 20px) 0, 100% 20px, 100% calc(100% - 20px), calc(100% - 20px) 100%, 20px 100%, 0 calc(100% - 20px), 0 20px
+		);
+	}
 </style>
 <body>
 	<div class="picture1"></div>
@@ -53,5 +92,11 @@
 	<div class="picture2"></div>
 	<br>
 	<div class="picture3"></div>
+	<br>
+	<div class="picture4"></div>
+	<br>
+	<div class="picture5"></div>
+	<br>
+	<div class="picture6"></div>
 </body>
 </html>

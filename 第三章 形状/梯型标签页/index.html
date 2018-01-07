@@ -1,0 +1,91 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>梯型标签页</title>
+</head>
+<style>	
+	.picture1 {
+		margin: 100px;
+		position: relative;
+		display: inline-block;
+		padding: 8px 16px 10px;
+		color: #fff;
+	}
+	.picture1::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		z-index: -1;
+		background: #58a;
+		transform: scaleY(1.3) perspective(8px) rotateX(5deg);
+		transform-origin: bottom;
+	} 
+	/*http://dabblet.com/gist/1345dc9399dc8e794502*/
+	.nav{
+		padding-left: 50px;
+		z-index: 1;
+		position: relative;
+	}
+	.nav > a {
+		color: #333;
+		position: relative;
+		display: inline-block;
+		padding: 12px 40px;
+		text-decoration: none;
+		margin: 0 -10px;
+	}
+	.nav > a::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: -1;
+		background: #ccc;
+		background-image: linear-gradient(hsla(0,0%,100%,.6), hsla(0,0%,100%,0));
+		border: 1px solid rgba(0,0,0,.4);
+		border-bottom: none;
+		border-radius: 8px 8px 0 0;
+		box-shadow: 0 2px #fff inset;
+		transform: perspective(8px) scaleY(1.3) rotateX(5deg);
+		transform-origin: bottom;
+		/*transform-origin: bottom left;*/
+		/*transform-origin: bottom right;*/
+	}
+	.nav > a.active {
+		z-index: 2;
+	}
+	.nav > a.active::before{
+		background: hsl(0,0%,100%);
+		margin-bottom: -1px;
+	}
+	.content{
+		width: 500px;
+		height: 300px;
+		background: hsl(0,0%,100%);
+		border: 1px solid rgba(0,0,0,.4);	
+		border-radius: 5px;
+	}
+</style>
+<body>
+	<div class="picture1">这是梯形</div>
+	<br>
+	<div class="nav-container">
+		<div class="nav">
+			<a href="#">Home</a>
+			<a class="active" href="#">Project</a>
+			<a href="#">About</a>
+		</div>
+		<div class="content">
+			
+		</div>
+	</div>
+
+	<br>
+</body>
+</html>
