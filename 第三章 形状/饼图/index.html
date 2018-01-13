@@ -1,0 +1,45 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>饼图</title>
+</head>
+<style>	
+	.picture1 {
+		position: relative;
+		width: 100px;
+		line-height: 100px;
+		text-align: center;
+		color: transparent;
+		background: yellowgreen;
+		background-image: linear-gradient(to right, transparent 50%, #655 0);
+		border-radius: 50%;
+		animation-delay: -20s;
+	}
+	@keyframes spin {
+		to { transform: rotate(.5turn); }
+	}
+	@keyframes bg {
+		50% { background: #655; }
+	}
+	.picture1::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 50%;
+		width: 50%;
+		height: 100%;
+		border-radius: 0 100% 100% 0 / 50%;
+		background-color: inherit;
+		transform-origin: left;
+		animation: spin 50s linear infinite,
+				   bg 100s step-end infinite;
+		animation-play-state: paused;
+		animation-delay: inherit;
+	}
+</style>
+<body>
+	<div class="picture1">20</div>
+	<br>
+</body>
+</html>
