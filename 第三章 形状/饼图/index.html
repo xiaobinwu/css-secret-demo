@@ -5,6 +5,7 @@
 	<title>饼图</title>
 </head>
 <style>	
+	/*基于transform的解决方案*/
 	.picture1 {
 		position: relative;
 		width: 100px;
@@ -14,7 +15,7 @@
 		background: yellowgreen;
 		background-image: linear-gradient(to right, transparent 50%, #655 0);
 		border-radius: 50%;
-		animation-delay: -20s;
+		/*animation-delay: -20s;*/
 	}
 	@keyframes spin {
 		to { transform: rotate(.5turn); }
@@ -37,9 +38,69 @@
 		animation-play-state: paused;
 		animation-delay: inherit;
 	}
+	/*基于svg的解决方案*/
+	svg {
+		width: 100px;
+		height: 100px;
+		transform: rotate(-90deg);
+		background: yellowgreen;
+		border-radius: 50%;
+	}
+	circle{
+		fill: yellowgreen;
+		stroke: #655;
+		stroke-width: 32;
+	}
+	#circle2 {
+		stroke-dasharray: 38 100;
+	}
+	/*角向渐变的解决方案(未支持)*/
+	.picture3{
+		width: 100px;
+		height: 100px;
+		border-radius: 50%;
+		background: conic-gradient(#655 attr(data-value%), yellowgreen 0);
+		background: -webkit-conic-gradient(#655 attr(data-value%), yellowgreen 0);
+	}
 </style>
 <body>
 	<div class="picture1">20</div>
 	<br>
+	<svg viewBox="0 0 32 32">
+		<circle id="circle2" r="16" cx="16" cy="16"></circle>
+	</svg>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<div class="picture2">20</div>
+
+	<div class="picture3" data-value="30"></div>
+
 </body>
+<script type="text/javascript">
+	// 基于transform的解决方案
+	let picture1 = document.querySelector('.picture1');
+	let rate1 = parseFloat(picture1.textContent);
+	picture1.style.animationDelay = `-${rate1}s`;
+
+	// 基于svg的解决方案
+	let picture2 = document.querySelector('.picture2');
+	let rate2 = parseFloat(picture2.textContent);
+	let NS = 'http://www.w3.org/2000/svg';
+	let svg = document.createElementNS(NS, 'svg');
+	let circle = document.createElementNS(NS, 'circle');
+	let title = document.createElementNS(NS, 'title');
+	circle.setAttribute('r', 16);
+	circle.setAttribute('cx', 16);
+	circle.setAttribute('cy', 16);
+	circle.setAttribute('stroke-dasharray', rate2 + ' 100');
+	svg.setAttribute('viewBox', '0 0 32 32');
+	title.textContent = rate2;
+	picture2.textContent = '';
+	svg.appendChild(title);
+	svg.appendChild(circle);
+	picture2.appendChild(svg);
+</script>
 </html>
