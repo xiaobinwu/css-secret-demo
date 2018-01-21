@@ -1,0 +1,39 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>单侧投影</title>
+</head>
+<style>	
+.div {
+	width: 200px;
+	height: 200px;
+	background: yellow;
+}
+.shadow1 {
+	box-shadow: 2px 3px 4px rgba(0,0,0,.5);
+}
+/*单侧投影*/
+.shadow2 {
+	box-shadow: 0 5px 4px -4px black;
+}
+/*邻边投影*/
+.shadow3 {
+	box-shadow: 3px 3px 6px -3px black;
+}
+/*双侧头影*/
+.shadow4 {
+	box-shadow: 5px 0 5px -5px black,
+				-5px 0 5px -5px black;
+}
+</style>
+<body>
+	<div class="div shadow1"></div>
+	<br>
+	<div class="div shadow2"></div>
+	<br>
+	<div class="div shadow3"></div>
+	<br>
+	<div class="div shadow4"></div>
+</body>
+</html>
