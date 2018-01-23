@@ -1,0 +1,54 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>染色效果</title>
+</head>
+<style>	
+	/*基于滤镜的方案*/
+/*	sepia： 降低饱和度
+	saturate：提高饱和度
+	hue-rotate：色相偏移*/
+	.img1 {
+		transition: filter .5s;
+		filter: sepia(1) saturate(4) hue-rotate(295deg);
+	}
+	.img1:focus,
+	.img1:hover {
+		filter: none;
+	}
+	/*基于混合模式方案*/
+	/*使用luminosity混合模式，保留上层元素的hsl亮度信息，并从它的下层吸取色相和饱和度信息*/
+	.mix-blend-mode {
+		display: inline-block;
+		width: 1024px;
+		height: 691px;
+		background: hsl(335, 100%, 50%);
+	}
+	.mix-blend-mode img {
+		mix-blend-mode: luminosity;
+	}
+
+	.background-blend-mode {
+		display: inline-block;
+		width: 1024px;
+		height: 691px;
+		background-size: cover;
+		background-color: hsl(335, 100%, 50%);
+		background-blend-mode: luminosity;
+		transition: background-color .5s;
+	}
+	.background-blend-mode:hover {
+		background-color: transparent;
+	}
+</style>
+<body>
+	<img class="img1" src="../../img/timg.jpeg">
+	<br>
+	<a href="#" class="mix-blend-mode">
+		<img src="../../img/timg.jpeg">
+	</a>
+	<br>
+	<div class="background-blend-mode" style="background-image: url(../../img/timg.jpeg)"></div>
+</body>
+</html>

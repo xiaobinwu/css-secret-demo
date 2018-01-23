@@ -1,0 +1,31 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>不规则投影</title>
+</head>
+<style>	
+.shadow {
+	width: 200px;
+	height: 200px;
+	background: yellow;
+	position: relative;
+	filter: drop-shadow(2px 2px 10px rgba(0,0,0,.5));
+}
+.shadow::before {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 100%;
+	width: 0;
+	height: 0;
+	border: 8px solid;
+	transform: translateY(-4px);
+	border-color: transparent transparent transparent yellow;
+}
+</style>
+<body>
+	<div class="shadow"></div>
+
+</body>
+</html>
