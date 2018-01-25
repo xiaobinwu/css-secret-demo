@@ -1,0 +1,46 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>折角效果</title>
+</head>
+<style>	
+	.div {
+		width: 200px;
+		height: 200px;
+		background: #58a;
+		margin: 20px 0;
+	}
+	/*45度折角解决方案*/
+	.deg1 {
+		background:linear-gradient(to left bottom, transparent 50%, rgba(0,0,0,.4) 0) no-repeat 100% 0 / 2em 2em, linear-gradient(-135deg, transparent 1.5em, #58a 0);
+	}	
+	/*其他角度的解决方案(勾股定理、三角函数)*/
+	.deg2 {
+		background:linear-gradient(to left bottom, transparent 50%, rgba(0,0,0,.4) 0) no-repeat 100% 0 / 3em 1.73em, linear-gradient(-150deg, transparent 1.5em, #58a 0);
+	}
+	.deg3 {
+		background: linear-gradient(-150deg, transparent 1.5em, #58a 0);	
+		position: relative;
+		border-radius: .5em;
+	}
+	.deg3::before{
+		content: '';
+		position: absolute;
+		top: 0;
+		right: 0;
+		background:linear-gradient(to left bottom, transparent 50%, rgba(0,0,0,.2) 0, rgba(0,0,0,.4)) 100% 0  no-repeat;
+		width: 1.73em;
+		height: 3em;
+		transform: translateY(-1.3em) rotate(-30deg);
+		transform-origin: bottom right;
+		border-bottom-left-radius: inherit;
+		box-shadow: -.2em .2em .3em -.1em rgba(0,0,0,.15);
+	}
+</style>
+<body>
+	<div class="div deg1"></div>
+	<div class="div deg2"></div>
+	<div class="div deg3"></div>
+</body>
+</html>
