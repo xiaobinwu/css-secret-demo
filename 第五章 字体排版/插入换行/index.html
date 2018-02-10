@@ -1,0 +1,36 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>插入换行</title>
+</head>
+<style>	
+	dt,dd {
+		display: inline;
+	}
+	dd{
+		margin: 0;
+		font-weight: bold;
+	}
+	dd+dt::before {
+		content: '\A';
+		white-space: pre;
+	}
+	dd+dd::before {
+		content: ', ';
+		font-weight: normal;
+	}
+</style>
+<body>
+	<dl>
+		<dt>Name:</dt>
+		<dd>wushaobin</dd>
+		<dt>Email:</dt>
+		<dd>739288994@qq.com</dd>
+		<dd>12345@qq.com</dd>
+		<dd>54321@qq.com</dd>
+		<dt>Location:</dt>
+		<dd>shenzhen</dd>
+	</dl>
+</body>
+</html>

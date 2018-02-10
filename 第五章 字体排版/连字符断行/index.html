@@ -1,0 +1,18 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>连字符断行</title>
+</head>
+<style>	
+	/*在打印媒介中，两端对齐与连字符断行相辅相成，因为连字符允许单词在音节分界处断开并换行，也可以使用&sky软连字符，来使浏览器能够在正确的地方断开单词*/
+	p {
+		width: 300px;
+		hyphens: auto;
+		text-align: justify;
+	}
+</style>
+<body>
+	<p>Life is a journey. What we should care about is not where it's headed but what we see and how we feel. It's true that we don't know what we've got until we lose it, but it's also true that we don't know what we've been losing until it arrives. </p>
+</body>
+</html>

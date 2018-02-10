@@ -1,0 +1,31 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>文本行的斑马条纹</title>
+</head>
+<style>	
+	body {
+		margin: 0;
+		padding: 0;
+	}
+	.div {
+		padding: .5em;
+		line-height: 1.5;
+		background: beige;
+		background-image: linear-gradient(rgba(0,0,0,.2) 50%, transparent 0);
+		background-color: auto 3em;
+		background-origin: content-box;
+	}
+</style>
+<body>
+	<div class="div">
+		var para=document.createElement("p");
+		var node=document.createTextNode("This is new.");
+		para.appendChild(node);
+
+		var element=document.getElementById("div1");
+		element.appendChild(para);
+	</div>
+</body>
+</html>
