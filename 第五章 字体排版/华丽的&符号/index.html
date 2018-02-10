@@ -1,0 +1,34 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>华丽的&符号</title>
+</head>
+<style>	
+	body {
+		margin: 0;
+		padding: 0;
+	}
+	.amp {
+		font-family: Baskerville, "Goudy Old Style", Garamond, Palatino, serif;
+		font-style: italic; 
+	}
+	/*'&'.charCodeAt(0).toString(16); => 26*/
+	@font-face {
+		font-family: Ampersand;
+		src: local(Baskerville-Italic),
+			 local(GoudyOldStyleT-Italic),
+			 local(Palatino-Italic),
+			 local(BookAntiqua-Italic);
+		/*src: url(xxx.woff); 这种只包括特定字体的方案不够灵活*/
+		unicode-range: U+26;
+	}
+	.font { font-family: Ampersand, Helvetica, sans-serif; }
+</style>
+<body>
+	<!-- 方法一 -->
+	<p>HTML <span class="amp">&amp;</span> CSS</p> 
+	<!-- 方法二 -->
+	<p class="font">Html & Css</p>
+</body>
+</html>

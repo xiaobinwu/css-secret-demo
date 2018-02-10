@@ -1,0 +1,48 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>调整tab的宽度</title>
+</head>
+<style>	
+	body {
+		margin: 0;
+		padding: 0;
+	}
+	pre {
+		background-color: #eee;
+	}
+	.tab-size {
+		tab-size: 4;
+	}
+</style>
+<body>
+	<pre>
+		function* fibs() {
+			let a = 0;
+			let b = 1;
+			while (true) {
+				yield a;
+				[a, b] = [b, a + b];
+			}
+		}
+
+		let [first, second, third, fourth, fifth, sixth] = fibs();
+		sixth // 5
+	</pre>
+	<pre class="tab-size">
+		function* fibs() {
+			let a = 0;
+			let b = 1;
+			while (true) {
+				yield a;
+				[a, b] = [b, a + b];
+			}
+		}
+
+		let [first, second, third, fourth, fifth, sixth] = fibs();
+		sixth // 5
+	</pre>
+
+</body>
+</html>
