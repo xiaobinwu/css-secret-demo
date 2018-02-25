@@ -1,0 +1,67 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>环形文字</title>
+</head>
+<style>	
+	body {
+		margin: 0;
+		padding: 0;
+	}
+	.circlar path, .circular1 path{
+		fill: none;
+	}
+	.circlar, .circular1{
+		width: 30em;
+		height: 30em;
+		margin: 3em auto 0;
+	}
+	.circlar svg, .circular1 svg {
+		display: block;
+		overflow: visible;
+	}
+</style>
+<body>
+	<div class="circlar">
+		<svg viewBox="0 0 100 100">
+			<path d="M 0,50 a 50,50 0 1, 1 0, 1 z" id="circle"></path>
+			<text>
+				<textPath xlink:href="#circle">
+					circular reasoning works because I am good man
+				</textPath>
+			</text>
+		</svg>
+	</div>
+	<br>
+	<br>
+	<br>
+	<br>
+	<div class="circular1">
+		circular reasoning works because I am good man
+	</div>
+</body>
+<script type="text/javascript">
+	let circular1 = document.querySelector('.circular1');
+	let NS = 'http://www.w3.org/2000/svg';
+	let xlinkNS = 'http://www.w3.org/1999/xlink';
+	let svg = document.createElementNS(NS, 'svg');
+	let circle = document.createElementNS(NS, 'path');
+	let text = document.createElementNS(NS, 'text');
+	let textPath = document.createElementNS(NS, 'textPath');
+	svg.setAttribute('viewBox', '0 0 100 100');
+
+	circle.setAttribute('d', 'M 0,50 a 50,50 0 1, 1 0, 1 z');
+	circle.setAttribute('id', 'circle');
+
+	textPath.textContent = circular1.textContent;
+	textPath.setAttributeNS(xlinkNS, 'xlink:href', '#circle');
+
+	text.appendChild(textPath);
+	svg.appendChild(circle);
+	svg.appendChild(text);
+	circular1.textContent = '';
+	circular1.appendChild(svg);
+
+</script>
+</html>

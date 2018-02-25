@@ -1,0 +1,35 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>通过阴影来弱化背景</title>
+</head>
+<style>	
+	.overlay {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: rgba(0,0,0,.8);
+	}
+	.lightbox {
+		width: 200px;
+		height: 100px;
+		margin-top: 50%;
+		margin-left: 50%;
+		transform: translate(-50%, -50%);
+		background: #fff;
+		position: absolute;
+		z-index: 1;
+		padding: 20px;
+		/*box-shadow: 0 0 0 50vmax rgba(0,0,0,.8); box-shadow方案*/
+	}
+</style>
+<body>
+	<div class="overlay"></div>
+	<div class="lightbox">
+		A few days before his death, Tyler beckoned me over to his hospital bed and whispered
+	</div>
+</body>
+</html>
