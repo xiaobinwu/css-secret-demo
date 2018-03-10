@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>自适应内部元素</title>
+	<style type="text/css">
+		.figure1 figure {
+			border: 1px solid #eee;
+			padding: 10px;
+		}
+		.figure2 figure {
+			width: max-width: 720px;
+			width: min-content; /* 容器内部最大的不可断行元素的宽度（即最宽的单词、图片或具有固定宽度的盒元素） */
+			margin: auto;
+			border: 1px solid #eee;
+			padding: 10px;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="figure1">
+		<p>some text [......]</p>
+		<figure>
+			<img src="../../img/timg.jpeg" />
+			<figcaption>
+				Life is a journey. What we should care about is not where it's headed but what we see and how we feel.
+			</figcaption>		
+		</figure>
+		<p>more text [......]</p>
+	</div>
+
+	<div class="figure2">
+		<p>some text [......]</p>
+		<figure>
+			<img src="../../img/timg.jpeg" />
+			<figcaption>
+				Life is a journey. What we should care about is not where it's headed but what we see and how we feel.
+			</figcaption>		
+		</figure>
+		<p>more text [......]</p>
+	</div>
+
+</body>
+</html>

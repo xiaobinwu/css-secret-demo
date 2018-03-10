@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>根据兄弟元素的数量来设置样式</title>
+	<style type="text/css">
+		ul::after {
+			display: table;
+			content: '';
+		}
+		ul > li {
+			float: left;
+			margin-right: 5px;
+			padding: 15px;
+			background: #eee;
+			color: #fff;
+			list-style: none;
+		}
+		.ul1 li:first-child:nth-last-child(4),
+		.ul1 li:first-child:nth-last-child(4) ~ li {
+			background: orange;
+		}
+		.ul2 li:nth-child(n+4){
+			background: orange;
+		}
+		.ul3 li:nth-child(-n+4){
+			background: orange;
+		}
+		/*大于四个，匹配所有*/
+		.ul4 li:first-child:nth-last-child(n+4),
+		.ul4 li:first-child:nth-last-child(n+4) ~ li {
+			background: orange;
+		}
+		/*小于四个，匹配所有*/
+		.ul5 li:first-child:nth-last-child(-n+4),
+		.ul5 li:first-child:nth-last-child(-n+4) ~ li {
+			background: orange;
+		}
+		/*大于两个小于六个，匹配所有*/
+		.ul6 li:first-child:nth-last-child(n+2):nth-last-child(-n+6),
+		.ul6 li:first-child:nth-last-child(n+2):nth-last-child(-n+6) ~ li {
+			background: orange;
+		}
+	</style>
+</head>
+<body>
+	<ul class="ul1">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+	</ul>
+	<br>
+	<ul class="ul2">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+		<li>6</li>
+		<li>7</li>
+		<li>8</li>
+	</ul>
+	<br>
+	<ul class="ul3">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+		<li>6</li>
+		<li>7</li>
+		<li>8</li>
+	</ul>	
+	<br>
+	<br>
+	<ul class="ul4">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+	</ul>
+	<br>
+	<ul class="ul4">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+		<li>6</li>
+		<li>7</li>
+		<li>8</li>
+	</ul>
+	<br>
+	<br>
+	<ul class="ul5">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+	</ul>
+	<br>
+	<ul class="ul5">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+		<li>6</li>
+		<li>7</li>
+		<li>8</li>
+	</ul>
+	<br>
+	<br>
+	<ul class="ul6">
+		<li>1</li>
+	</ul>
+	<br>
+	<ul class="ul6">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+	</ul>
+	<br>
+	<ul class="ul6">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+		<li>6</li>
+		<li>7</li>
+		<li>8</li>
+	</ul>
+</body>
+</html>

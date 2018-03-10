@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>垂直居中</title>
+	<style type="text/css">
+		body {
+			background-color: yellow;
+		}
+		main.main1 {
+			position: absolute;
+/*			top: 50%;
+			left: 50%;
+			margin-top: -100px;
+			margin-left: -200px;*/
+			top: calc(50% - 100px);
+			left: calc(50% - 200px);
+			width: 400px;
+			height: 200px;
+			background-color: #333;
+			color: #fff;
+		}
+		.none {
+			display: none;
+		}
+		main.main2 {
+			position: absolute;
+			width: 40%;
+			height: 20%;
+			background-color: #333;
+			color: #fff;	
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			transform-style: preserve-3d; /*防止模糊*/
+		}
+		main.main3 {
+			width: 400px;
+			height: auto;
+			padding: 16px 32px;
+			margin: 50% auto 0; /*以父元素的宽度作为解析基准*/
+			background-color: #333;
+			color: #fff;	
+			transform: translateY(-50%);
+		}
+		main.main4 {
+			width: 400px;
+			height: auto;
+			padding: 16px 32px;
+			margin: 50vh auto 0;
+			background-color: #333;
+			color: #fff;	
+			transform: translateY(-50%);
+		}
+		body {
+			display: flex;
+			min-height: 100vh;
+			margin: 0;
+		}
+		main.main5 {
+			width: 400px;
+			height: auto;
+			margin: auto;
+			background-color: #333;
+			color: #fff;	
+		}
+	</style>
+</head>
+<body>
+	<main class="main1 none">
+		<h1>Am I centered yet?</h1>
+		<p>Center me, please!</p>
+	</main>
+	<main class="main2 none">
+		<h1>Am I centered yet?</h1>
+		<p>Center me, please!</p>
+	</main>
+	<main class="main3 none">
+		<h1>Am I centered yet?</h1>
+		<p>Center me, please!</p>
+	</main>
+	<main class="main4 none">
+		<h1>Am I centered yet?</h1>
+		<p>Center me, please!</p>
+	</main>
+	<main class="main5">
+		<h1>Am I centered yet?</h1>
+		<p>Center me, please!</p>
+	</main>
+</body>
+</html>

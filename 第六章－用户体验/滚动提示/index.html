@@ -1,0 +1,39 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>滚动提示</title>
+</head>
+<style>
+	ul {
+		overflow: auto;
+		width: 10em;
+		height: 8em;
+		padding: .3em .5em;
+		border: 1px solid silver;
+		background: linear-gradient(white 30%, transparent), radial-gradient(at top, rgba(0,0,0,.2), transparent 70%), linear-gradient(to top, white 30%, transparent), radial-gradient(at bottom, rgba(0,0,0,.2), transparent 70%);
+		background-repeat: no-repeat;
+		background-position: top left, top left, bottom left, bottom left;
+ 		background-size: 100% 50px, 100% 15px, 100% 50px, 100% 15px;
+ 		background-attachment: local, scroll, local, scroll;
+	}
+	li {
+		 height: 2em;
+		 line-height: 2em;
+	}	
+</style>
+<body>
+	<ul>
+		<li>xiaobin1</li>
+		<li>xiaobin2</li>
+		<li>xiaobin3</li>
+		<li>xiaobin4</li>
+		<li>xiaobin5</li>
+		<li>xiaobin6</li>
+		<li>xiaobin7</li>
+		<li>xiaobin8</li>
+		<li>xiaobin9</li>
+		<li>xiaobin10</li>
+	</ul>
+</body>
+</html>
